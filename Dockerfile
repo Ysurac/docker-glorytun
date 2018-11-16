@@ -12,4 +12,5 @@ ADD https://github.com/angt/glorytun/releases/download/v${version}/glorytun-${ve
 RUN tar xzf /tmp/glorytun-${version}.tar.gz
 WORKDIR /tmp/glorytun-${version}
 RUN meson build && ninja -C build install
+RUN rm -rf /tmp/glorytun-${version}
 CMD /usr/sbin/glorytun.sh
