@@ -27,4 +27,5 @@ echo "Configuration done"
 
 iptables -w -t nat -A POSTROUTING -o eth0 -s ${GLORYTUN_IP_PEER} -j MASQUERADE
 
-/usr/sbin/glorytun dev ${GLORYTUN_DEV} bind-port ${GLORYTUN_PORT} mtu ${GLORYTUN_MTU} keyfile ${keyfile} v4only
+#/usr/local/bin/glorytun dev ${GLORYTUN_DEV} bind ${GLORYTUN_IP_LOCAL} ${GLORYTUN_PORT} mtu ${GLORYTUN_MTU} keyfile ${keyfile} v4only
+/usr/local/bin/glorytun bind ${GLORYTUN_IP_LOCAL} ${GLORYTUN_PORT} keyfile ${keyfile} dev ${GLORYTUN_DEV}

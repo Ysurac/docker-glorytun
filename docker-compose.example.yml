@@ -1,7 +1,7 @@
 version: '2'
 services:
   mud:
-    image: gregdel/glorytun:0.89
+    image: ysurac/glorytun:0.0.99
     hostname: mud
     container_name: mud
     cap_add:
