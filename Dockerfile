@@ -9,9 +9,9 @@ ADD glorytun.sh /usr/sbin/glorytun.sh
 ENV version 0.0.99-mud
 WORKDIR /tmp
 ADD https://github.com/angt/glorytun/releases/download/v${version}/glorytun-${version}.tar.gz /tmp/glorytun-${version}.tar.gz
-RUN tar xzf /tmp/glorytun-${version}.tar.gz
-WORKDIR /tmp/glorytun-${version}
-RUN meson build && ninja -C build install
-RUN rm -rf /tmp/glorytun-${version}
-RUN apk del meson build-base gcc
+RUN tar xzf /tmp/glorytun-${version}.tar.gz \
+    && cd /tmp/glorytun-${version} \
+    && meson build && ninja -C build install \
+    && rm -rf /tmp/glorytun-${version} \
+    && apk del meson build-base gcc
 CMD /usr/sbin/glorytun.sh
