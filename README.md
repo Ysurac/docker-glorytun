@@ -9,7 +9,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 ### Build
 
 ```
-docker build -t gregdel/glorytun:0.0.99 .
+docker build -t ysurac/glorytun:0.0.99 .
 ```
 
 ### Run
