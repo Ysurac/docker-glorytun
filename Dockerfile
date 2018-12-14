@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache iproute2 meson build-base gcc libsodium-dev
+RUN apk add --no-cache iproute2 meson build-base gcc libsodium-dev git
 
 # Add the glorytun launch script
 ADD glorytun.sh /usr/sbin/glorytun.sh
